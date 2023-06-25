@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+{{ super.title }} - Home
+{% endblock %}
+
+{% block content %}
+
+        <!-- main-area -->
+        <main>
+
+            <!-- breadcrumb-area -->
+            <div class="breadcrumb-area breadcrumb-bg s-breadcrumb-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="breadcrumb-content">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="dots"></li>
+                                        <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+                                        <li class="dots2"></li>
+                                    </ol>
+                                </nav>
+                                <h2>support</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- breadcrumb-area-end -->
+
+            <!-- contact-area -->
+            <section class="contact-area primary-bg pt-70 pb-15">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="single-contact-box mb-50">
+                                <div class="contact-icon mb-30">
+                                    <img src="{% static 'img/icon/contact_box_icon01.png' %}" alt="img">
+                                </div>
+                                <div class="contact-content">
+                                    <h5>Headquater Location</h5>
+                                    <span>219 Joseph Street, WI, USA</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="single-contact-box mb-50">
+                                <div class="contact-icon mb-30">
+                                    <img src="{% static 'img/icon/contact_box_icon02.png' %}" alt="img">
+                                </div>
+                                <div class="contact-content">
+                                    <h5>Phone Number</h5>
+                                    <span>+1 213-282-6421</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="single-contact-box mb-50">
+                                <div class="contact-icon mb-30">
+                                    <img src="{% static 'img/icon/contact_box_icon03.png' %}" alt="img">
+                                </div>
+                                <div class="contact-content">
+                                    <h5>email us</h5>
+                                    <span>support@freightwiselogistics.com</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="single-contact-box mb-50">
+                                <div class="contact-icon mb-30">
+                                    <img src="{% static 'img/icon/contact_box_icon04.png' %}" alt="img">
+                                </div>
+                                <div class="contact-content">
+                                    <h5>Mailing address</h5>
+                                    <span>219 Joseph Street, WI, USA</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- contact-area-end -->
+
+            <!-- contact-map -->
+            <!-- <div id="contact-page-map"></div> -->
+            <!-- contact-map-end -->
+
+        </main>
+        <!-- main-area-end -->
+{% endblock %}

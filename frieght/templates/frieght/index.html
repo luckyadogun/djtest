@@ -1,0 +1,575 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+{{ super.title }} - Home
+{% endblock %}
+
+{% block content %}
+
+    <main>
+
+        <!-- slider-area -->
+        <section class="slider-area">
+            <div class="slider-active">
+                <div class="single-slider slider-bg d-flex align-items-center">
+                    <div class="slider-overlay-bg"></div>
+                    <div class="slider-bg-shape"></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-xl-10 col-lg-11">
+                                <div class="slider-content text-center">
+                                    <h2 data-animation="fadeInUpS" data-delay=".3s">Track Smarter</h2>
+                                    <p data-animation="fadeInUpS" data-delay=".6s">Leverage our global flight and logistic service. 
+                                        Track and monitor your packages all in one place.</p>
+                                    <div class="slider-form" data-animation="fadeInUpS" data-delay=".9s">
+                                        <form id="tracking" action="." method="POST">
+                                            {% csrf_token %}                                            
+                                            {{ tracking_form.tracking_code }}
+                                            <button class="btn">Tracking</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="single-slider slider-bg slider-video-overlay d-flex align-items-center youtube-bg" data-property="{videoURL:'enKKcVrPGs0',}">
+                    <div class="slider-overlay-bg"></div>
+                    <div class="slider-bg-shape"></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-xl-10 col-lg-11">
+                                <div class="slider-content text-center">
+                                    <h2 data-animation="fadeInUpS" data-delay=".3s">Deliver Faster</h2>
+                                    <p data-animation="fadeInUpS" data-delay=".6s">Leverage our global flight and logistic service. 
+                                        Track and monitor your packages all in one place</p>
+                                    <div class="slider-form" data-animation="fadeInUpS" data-delay=".9s">
+                                        <form action="#">
+                                            <input type="text" placeholder="Tracking id">
+                                            <button class="btn">Tracking</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- slider-area-end -->
+
+        <!-- category-area -->
+        <section class="category-area">
+            <div class="container">
+                <div class="category-bg">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="category-list">
+                                <ul>
+                                    <li>
+                                        
+                                        <a href="#" data-toggle="modal" data-target="#exampleModalLong">
+                                            <div class="category-icon">
+                                                <i class="flaticon-cruise"></i>
+                                            </div>
+                                            <h5>Sea Freight</h5>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" data-toggle="modal" data-target="#exampleModalLong">
+                                            <div class="category-icon">
+                                                <i class="flaticon-air-freight"></i>
+                                            </div>
+                                            <h5>Air Freight</h5>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" data-toggle="modal" data-target="#exampleModalLong">
+                                            <div class="category-icon">
+                                                <i class="flaticon-delivery-1"></i>
+                                            </div>
+                                            <h5>Insurance</h5>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" data-toggle="modal" data-target="#exampleModalLong">
+                                            <div class="category-icon">
+                                                <i class="flaticon-warehouse"></i>
+                                            </div>
+                                            <h5>Warehousing</h5>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" data-toggle="modal" data-target="#exampleModalLong">
+                                            <div class="category-icon">
+                                                <i class="flaticon-package"></i>
+                                            </div>
+                                            <h5>Forwarding</h5>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- category-area-end -->
+
+        <!-- about-area -->
+        <section class="about-area about-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="about-active">
+                            <div class="single-about-wrap">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-6">
+                                        <div class="about-img">
+                                            <img src="{% static 'img/images/ph1.jpg' %}" alt="img">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="about-content">
+                                            <div class="section-title about-title mb-25">
+                                                <h2>World-wide Delivery</h2>
+                                                <h6>We offer unbeatable delivery world-wide</h6>
+                                            </div>
+                                            <p>When time and money matters call FreightWise Logistics to help you move packages across the world.
+                                                We offer a wide-range of solutions in a globalized and optimized manner.
+                                            </p>                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="single-about-wrap">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-6">
+                                        <div class="about-img">
+                                            <img src="{% static 'img/images/ph2.jpg' %}" alt="img">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="about-content">
+                                            <div class="section-title about-title mb-25">
+                                                <h2>Cargo Tracking</h2>
+                                                <h6>Keep an eye on your packages anytime</h6>
+                                            </div>
+                                            <p>With a real-time tracking service, get updated on the location of your packages
+                                                with your tracking number without any delays.
+                                            </p>
+                                            <!-- <a href="#" class="btn">comparison</a> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="single-about-wrap">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-6">
+                                        <div class="about-img">
+                                            <img src="{% static 'img/images/about_img03.png' %}" alt="img">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="about-content">
+                                            <div class="section-title about-title mb-25">
+                                                <h2>International Cargo Service</h2>
+                                                <h6>Express delivery is an innovative service</h6>
+                                            </div>
+                                            <p>Express delivery is an innovative service is effective logistics solution for the delivery of small cargo. This service
+                                            is useful for companies of various effective logistics scale.</p>
+                                            <a href="#" class="btn">comparison</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- about-area-end -->
+
+        <!-- services-area -->
+        <section class="services-area pt-115 pb-90">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-8 col-lg-10">
+                        <div class="section-title text-center mb-60">
+                            <h6>Smart Logistics Services</h6>
+                            <h2>About FreightWise Logistics</h2>
+                            <p>FreightWise Logistics is a smart logistics company based with a wide-range of services
+                                and experience in shipping and deliverying packages worldwide.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="services-wrapper">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="single-services mb-30">
+                                <div class="services-thumb">
+                                    <a href="#"><img src="{% static 'img/images/ph4.jpg' %}" alt="img"></a>
+                                </div>
+                                <div class="services-content">
+                                    <div class="services-icon">
+                                        <i class="flaticon-shipping-and-delivery"></i>
+                                    </div>
+                                    <h3><a href="#">Competitive Pricing</a></h3>
+                                    <!-- <span>Delivery Service</span> -->
+                                    <p>FreightWise offers a wide-range of competitive and tiered to suit your needs.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="single-services mb-30">
+                                <div class="services-thumb">
+                                    <a href="#"><img src="{% static 'img/images/ph5.jpg' %}" alt="img"></a>
+                                </div>
+                                <div class="services-content">
+                                    <div class="services-icon">
+                                        <i class="flaticon-shipping"></i>
+                                    </div>
+                                    <h3><a href="#">Widdest Delivery Network</a></h3>
+                                    <!-- <span>Delivery Service</span> -->
+                                    <p>Largest network of offices and agents in the Caribbean. Over 6000 agents and international partners worldwide.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="single-services mb-30">
+                                <div class="services-thumb">
+                                    <a href="#"><img src="{% static 'img/images/ph3.jpg' %}" alt="img"></a>
+                                </div>
+                                <div class="services-content">
+                                    <div class="services-icon">
+                                        <i class="flaticon-location"></i>
+                                    </div>
+                                    <h3><a href="#">A Wealth of Experience</a></h3>
+                                    <!-- <span>Delivery Service</span> -->
+                                    <p>FreightWise Logistics offer over 36 years of service in the business helping to meet logistic needs.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- services-area-end -->
+
+        <!-- section-area -->
+        <section id="quoteRequest" class="area-wrapper black-bg position-relative pt-115 pb-120">
+            <div class="area-wrap-bg"></div>
+            <div class="testimonial-map-bg"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="testimonial-area">
+                            <div class="section-title white-title mb-55">
+                                <h6>Happy Customer Reviews</h6>
+                                <h2>Our Top Reviews</h2>
+                            </div>
+                            <div class="testimonial-active">
+                                <div class="single-testimonial">
+                                    <div class="testimonial-cat mb-30">
+                                        <!-- <h5>Shipping Cargo</h5> -->
+                                        <div class="testimonial-rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <div class="testimonial-content mb-45">
+                                        <p>“FreightWise Logistics has really helped our business. I don't always clop, but when I do, it's because of FreightWise Logistics. The best on the net! ”</p>
+                                    </div>
+                                    <div class="testimonial-avatar">
+                                        <!-- <div class="testi-avatar-img">
+                                            <img src="{% static 'img/images/testi_avatar01.png' %}" alt="img">
+                                        </div> -->
+                                        <div class="testi-avatar-info">
+                                            <h6>Beatrice M.</h6>
+                                            <span>Kentucky, USA</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="single-testimonial">
+                                    <div class="testimonial-cat mb-30">
+                                        <!-- <h5>Air Freight</h5> -->
+                                        <div class="testimonial-rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <div class="testimonial-content mb-45">
+                                        <p>“ We have no regrets! I STRONGLY recommend FreightWise Logistics to EVERYONE interested in running a successful online business! FreightWise Logistics saved my business. I don't know what else to say. ”</p>
+                                    </div>
+                                    <div class="testimonial-avatar">
+                                        <!-- <div class="testi-avatar-img">
+                                            <img src="{% static 'img/images/testi_avatar02.png' %}" alt="img">
+                                        </div> -->
+                                        <div class="testi-avatar-info">
+                                            <h6>Elliot B.</h6>
+                                            <span>San Fransisco</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="cta-area cta-pl">
+                            <div class="section-title white-title mb-60">
+                                <!-- <h6>Clients Trust Us</h6> -->
+                                <h2>Quote Request</h2>
+                            </div>
+                            <div class="cta-from">
+                                <form action="." method="POST">
+                                    {% csrf_token %}
+                                    <div class="cta-form-col d-flex justify-content-between">
+                                        {{ quote_form.service }}
+                                        {{ quote_form.length }}
+                                        {{ quote_form.height }}
+                                    </div>
+                                    <div class="cta-form-col d-flex justify-content-between">
+                                        {{ quote_form.from_country }}
+                                        {{ quote_form.to_country }}                                        
+                                    </div>
+                                    <div class="cta-form-col d-flex justify-content-between">
+                                        {{ quote_form.weight }}
+                                        {{ quote_form.email }}
+                                    </div>
+                                    <h4 class="extra-services"><i class="fas fa-binoculars"></i>Service Types</h4>
+                                    <ul>
+                                        <li>
+                                            <div class="custom-control custom-checkbox">
+                                                {{ quote_form.is_door_to_door }}
+                                                <label class="custom-control-label" for="customCheck1">Door to Door Delivery</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="custom-control custom-checkbox">
+                                                {{ quote_form.is_mailbox }}                                                
+                                                <label class="custom-control-label" for="customCheck2">Personal Mail-box services</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="custom-control custom-checkbox">
+                                                {{ quote_form.is_pickup }}                                                
+                                                <label class="custom-control-label" for="customCheck3">Pick up and delivery</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="custom-control custom-checkbox">
+                                                {{ quote_form.is_warehousing }}                                                
+                                                <label class="custom-control-label" for="customCheck4">Warehousing</label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <button class="btn">book</button>
+                                    <br>
+                                    {% if message %}
+                                        <div class="testi-avatar-info">
+                                            <span>{{ message }}</span>
+                                        </div>
+                                    {% endif %}
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- section-area-end -->
+
+        <!-- gallery-area -->
+        <!-- <section class="gallery-area gallery-bg pt-115 pb-120">
+            <div class="container">
+                <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="section-title text-center mb-70">
+                        <h6>Deliver Anywhere, Anytime</h6>
+                        <h2>Exclusive Cargo Gallery</h2>
+                    </div>
+                </div>
+                </div>
+                <div class="row gallery-active">
+                    <div class="col-lg-8 col-md-12 grid-item grid-sizer">
+                        <div class="single-gallery-img mb-30">
+                            <a href="#"><img src="{% static 'img/gallery/gallery_thumb01.jpg' %}" alt="img"></a>
+                            <div class="gallery-overlay">
+                                <h5 class="gallery-overlay-title"><a href="#">Cargo Truck</a></h5>
+                                <span>Blanding , Digital</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 grid-item grid-sizer">
+                        <div class="single-gallery-img mb-30">
+                            <a href="#"><img src="{% static 'img/gallery/gallery_thumb02.jpg' %}" alt="img"></a>
+                            <div class="gallery-overlay">
+                                <h5 class="gallery-overlay-title"><a href="#">Cargo Truck</a></h5>
+                                <span>Blanding , Digital</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 grid-item grid-sizer">
+                        <div class="single-gallery-img mb-30">
+                            <a href="#"><img src="{% static 'img/gallery/gallery_thumb03.jpg' %}" alt="img"></a>
+                            <div class="gallery-overlay">
+                                <h5 class="gallery-overlay-title"><a href="#">Cargo Truck</a></h5>
+                                <span>Blanding , Digital</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 grid-item grid-sizer">
+                        <div class="single-gallery-img mb-30">
+                            <a href="#"><img src="{% static 'img/gallery/gallery_thumb04.jpg' %}" alt="img"></a>
+                            <div class="gallery-overlay">
+                                <h5 class="gallery-overlay-title"><a href="#">Cargo Truck</a></h5>
+                                <span>Blanding , Digital</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <!-- gallery-area-end -->
+
+        <!-- fact-area -->
+        <section class="fact-area position-relative pt-115">
+            <div class="fact-bg"></div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="section-title text-center mb-70">
+                            <h6>Deliver Anywhere, Anytime</h6>
+                            <h2>Why FreightWise?</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <div class="single-fact mb-50">
+                            <div class="fact-icon mb-25">
+                                <i class="flaticon-package"></i>
+                            </div>
+                            <div class="fact-content">
+                                <h4><span class="count">3,560</span> items</h4>
+                                <h6>Package Delivered</h6>
+                                <p>Packages we have delivered across the world</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <div class="single-fact mb-50">
+                            <div class="fact-icon mb-25">
+                                <i class="flaticon-placeholder"></i>
+                            </div>
+                            <div class="fact-content">
+                                <h4><span class="count">195</span></h4>
+                                <h6>Countries Covered</h6>
+                                <p>Total number of countries we have serviced</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <div class="single-fact mb-50">
+                            <div class="fact-icon mb-25">
+                                <i class="flaticon-user"></i>
+                            </div>
+                            <div class="fact-content">
+                                <h4><span class="count">25</span> k</h4>
+                                <h6>Happy Customer</h6>
+                                <p>Our beeming and happy customer base</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4 col-sm-6">
+                        <div class="single-fact mb-50">
+                            <div class="fact-icon mb-25">
+                                <i class="flaticon-like"></i>
+                            </div>
+                            <div class="fact-content">
+                                <h4><span class="count">36</span> Yr</h4>
+                                <h6>Years Experience</h6>
+                                <p>Our wealth of experience thus far</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- fact-area-end -->
+
+        <!-- extra-features -->
+        <!-- <section class="extra-features ef-md-padding pb-115 fix pt-65">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xl-5 col-lg-6">
+                        <div class="section-title mb-25">
+                            <h6>Extra Features</h6>
+                            <h2>Explore Airtrans Services
+                            Control <span>Shipping</span></h2>
+                        </div>
+                        <div class="extra-features-content">
+                            <h5>Express delivery innovative service effective logistics solution for the delivery small cargo.</h5>
+                            <p>Express delivery is an innovative service is effective logi solution for the delivery of small cargo. This service is
+                            use for companies of various effective logisti scale.Express delivery.</p>
+                            <a href="#" class="btn" data-toggle="modal" data-target="#exampleModalLong">Send Package</a>
+                        </div>
+                    </div>
+                    <div class="col-xl-7 col-lg-6">
+                        <div class="extra-features-img">
+                            <img src="{% static 'img/images/ph6.jpg' %}" class="wow bounceInDown" data-wow-delay=".3s" alt="img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <!-- extra-features-end -->        
+
+        <!-- brand-area -->
+        <!-- <div class="brand-area pt-120 pb-120">
+            <div class="container">
+                <div class="row brand-active">
+                    <div class="col-12">
+                        <div class="signle-brand">
+                            <img src="{% static 'img/brand/brnad_logo01.png' %}" alt="img">
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="signle-brand">
+                            <img src="{% static 'img/brand/brnad_logo02.png' %}" alt="img">
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="signle-brand">
+                            <img src="{% static 'img/brand/brnad_logo03.png' %}" alt="img">
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="signle-brand">
+                            <img src="{% static 'img/brand/brnad_logo04.png' %}" alt="img">
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="signle-brand">
+                            <img src="{% static 'img/brand/brnad_logo05.png' %}" alt="img">
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="signle-brand">
+                            <img src="{% static 'img/brand/brnad_logo03.png' %}" alt="img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- brand-area-end -->
+
+    </main>
+{% endblock %}

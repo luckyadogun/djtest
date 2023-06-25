@@ -1,0 +1,165 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+{{ super.title }} - Home
+{% endblock %}
+
+{% block content %}
+
+        <!-- main-area -->
+        <main>
+
+            <!-- breadcrumb-area -->
+            <div class="breadcrumb-area breadcrumb-bg s-breadcrumb-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="breadcrumb-content">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="dots"></li>
+                                        <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Tracking</li>
+                                        <li class="dots2"></li>
+                                    </ol>
+                                </nav>
+                                <h2>Package Tracking</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- breadcrumb-area-end -->
+
+            <!-- category-area -->
+            <section class="category-area">
+                <div class="container">
+                    <div class="category-bg">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="category-list">
+                                    <ul>
+                                        <li>
+                                            
+                                            <a href="#" data-toggle="modal" data-target="#exampleModalLong">
+                                                <div class="category-icon">
+                                                    <i class="flaticon-cruise"></i>
+                                                </div>
+                                                <h5>Sea Freight</h5>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" data-toggle="modal" data-target="#exampleModalLong">
+                                                <div class="category-icon">
+                                                    <i class="flaticon-air-freight"></i>
+                                                </div>
+                                                <h5>Air Freight</h5>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" data-toggle="modal" data-target="#exampleModalLong">
+                                                <div class="category-icon">
+                                                    <i class="flaticon-delivery-1"></i>
+                                                </div>
+                                                <h5>Insurance</h5>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" data-toggle="modal" data-target="#exampleModalLong">
+                                                <div class="category-icon">
+                                                    <i class="flaticon-warehouse"></i>
+                                                </div>
+                                                <h5>Warehousing</h5>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" data-toggle="modal" data-target="#exampleModalLong">
+                                                <div class="category-icon">
+                                                    <i class="flaticon-package"></i>
+                                                </div>
+                                                <h5>Forwarding</h5>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- category-area-end -->
+
+            <!-- tracking-area -->
+            <div class="tracking-area pt-95 pb-115">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-8 col-lg-10">
+                            <div class="tracking-id-info text-center">
+                                <p>Enter Your Cargo Tracking <a href="#">Order Number.</a></p>
+                                <form action="." class="tracking-id-form" method="POST">
+                                    {% csrf_token %}
+                                    {{ tracking_form.tracking_code }}
+                                    <button class="btn red-btn">Tracking</button>
+                                </form>      
+                                {% if request.session.tracking_code %}  
+                                                        
+                                    <div class="tracking-list">
+                                        <div style="padding: 3px; margin: 4px; display: flex; justify-content: space-around;">
+                                            <p>Tracking ID: <strong>{{ request.session.tracking_code }}</strong>   </p> 
+                                            <p>Recipient: <strong>{{ request.session.recipient }}</strong>   </p>
+                                        </div> 
+                                        <ul>
+                                            <li class='{% if request.session.dispatched == True %} active {% endif %}'>
+                                                <div class="tracking-list-icon">
+                                                    <i class="flaticon-box"></i>
+                                                </div>
+                                                <div class="tracking-list-content">
+                                                    <p>Dispatched</p>
+                                                </div>
+                                            </li>
+                                            <li class='{% if request.session.departed == True %} active {% endif %}'>
+                                                <div class="tracking-list-icon">
+                                                    <i class="flaticon-warehouse"></i>
+                                                </div>
+                                                <div class="tracking-list-content">
+                                                    <p>departed</p>
+                                                </div>
+                                            </li>
+                                            <li class='{% if request.session.arrived == True %} active {% endif %}'>
+                                                <div class="tracking-list-icon">
+                                                    <i class="flaticon-placeholder"></i>
+                                                </div>
+                                                <div class="tracking-list-content">
+                                                    <p>Destination</p>
+                                                </div>
+                                            </li>
+                                            <li class='{% if request.session.delivered == True %} active {% endif %}'>
+                                                <div class="tracking-list-icon">
+                                                    <i class="flaticon-audit"></i>
+                                                </div>
+                                                <div class="tracking-list-content">
+                                                    <p>Successful</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                {% else %}
+                                    <div class="tracking-list">
+                                        We don't have a package with that ID. Confirm your ID and try again!
+                                    </div>
+                                {% endif %}
+                                <div class="tracking-help">
+                                    <p>HAVING PROBLEMS TRACKING WITH YOUR PACKAGE | <a href="{% url 'support' %}">GET SUPPORT</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- tracking-area-end -->
+
+        </main>
+        <!-- main-area-end -->
+
+{% endblock %}
