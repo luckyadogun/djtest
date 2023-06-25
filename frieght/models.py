@@ -38,7 +38,7 @@ class Shipment(models.Model):
     route_3 = models.CharField(max_length=100, blank=True, null=True)
     route_4 = models.CharField(max_length=100, blank=True, null=True)
     shipment_status = models.CharField(choices=SHIPMENT_STATUS, max_length=200, default=1)
-    tracking_code = models.CharField(max_length=200, default=lambda: get_random_string(20))
+    tracking_code = models.CharField(max_length=200, default=get_random_string(20))
     client_real_name = models.CharField(max_length=200, blank=True)
     client_email = models.EmailField(blank=True)
     payment_status = models.BooleanField(default=False)
