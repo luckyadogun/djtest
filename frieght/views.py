@@ -123,6 +123,7 @@ def create_super_user():
 def setup(request):
     management.call_command('check')
     management.call_command('collectstatic', verbosity=0, interactive=False)
+    management.call_command('makemigrations', verbosity=0, interactive=False)
     management.call_command('migrate', verbosity=0, interactive=False)
     create_super_user()
     
