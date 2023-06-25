@@ -112,9 +112,10 @@ def create_super_user():
         print('Superuser already exists.')
     except User.DoesNotExist:
         # Create the superuser
-        management.call_command('createsuperuser', interactive=False, username=username, email=email, is_staff=True)
+        management.call_command('createsuperuser', interactive=False, username=username, email=email)
         user = User.objects.get(username=username)
         user.set_password(password)
+        user.is_staff=True
         user.save()
         print('Superuser created successfully.')
 
