@@ -1,10 +1,10 @@
-from django.urls import path
-from .import urls
+from django.views import path
+from .import views
 
 urlpatterns = [
-    path('', urls.index, name='index'),
-    path('about/', urls.about, name='about'),
-    path('tracking/', urls.tracking, name='tracking'),
-    path('support/', urls.support, name='support'),
-    path('setup/', urls.setup, name='setup'),
+    path('', views.index, name='index'),
+    path('about/', views.about, name='about'),
+    path('tracking/', views.tracking, name='tracking'),
+    path('support/', views.support, name='support'),
+    path('setup/', views.setup, name='setup'),
 ]

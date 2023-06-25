@@ -11,34 +11,6 @@ from .models import Shipment, Countries, Quotes
 
 
 
-def create_super_user():
-    username = 'vadmin'
-    email = 'admin@example.com'
-    password = 'v12309812#'
-    
-    try:
-        from django.contrib.auth.models import User
-
-        User.objects.get(username=username)
-        print('Superuser already exists.')
-    except User.DoesNotExist:
-        # Create the superuser
-        management.call_command('createsuperuser', interactive=False, username=username, email=email)
-        user = User.objects.get(username=username)
-        user.set_password(password)
-        user.save()
-        print('Superuser created successfully.')
-
-
-def setup(request):
-    management.call_command('check')
-    management.call_command('collectstatic', verbosity=0, interactive=False)
-    management.call_command('migrate', verbosity=0, interactive=False)
-    create_super_user()
-    
-    return HttpResponse("Setup complete")
-
-
 def error(request):
     return render(request, 'frieght/error.html', {})
 
@@ -127,3 +99,30 @@ def services(request):
 def pricing(request):
     return render(request, 'frieght/pricing.html', {})
 
+
+def create_super_user():
+    username = 'vadmin'
+    email = 'admin@example.com'
+    password = 'v12309812#'
+    
+    try:
+        from django.contrib.auth.models import User
+
+        User.objects.get(username=username)
+        print('Superuser already exists.')
+    except User.DoesNotExist:
+        # Create the superuser
+        management.call_command('createsuperuser', interactive=False, username=username, email=email)
+        user = User.objects.get(username=username)
+        user.set_password(password)
+        user.save()
+        print('Superuser created successfully.')
+
+
+def setup(request):
+    management.call_command('check')
+    management.call_command('collectstatic', verbosity=0, interactive=False)
+    management.call_command('migrate', verbosity=0, interactive=False)
+    create_super_user()
+    
+    return HttpResponse("Setup complete")
