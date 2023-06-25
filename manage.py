@@ -3,8 +3,6 @@
 import os
 import sys
 
-from django.core import management
-
 
 def main():
     """Run administrative tasks."""
@@ -22,7 +20,4 @@ def main():
 
 
 if __name__ == "__main__":
-    management.call_command('check', verbosity=0, interactive=False)
-    management.call_command('collectstatic', verbosity=0, interactive=False)
-    management.call_command('migrate', verbosity=0, interactive=False)
     main()

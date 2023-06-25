@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-8s9fvn9o%-2!#vyxl-2ml!q_1^=l@1mhvbt0hzfo508!txt0wy
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG")
 
-ALLOWED_HOSTS = ["dj.getrapidmvp.com", "127.0.0.1:8000"]
+ALLOWED_HOSTS = ["dj.getrapidmvp.com", "127.0.0.1"]
 CSRF_TRUSTED_ORIGINS = ['https://*.getrapidmvp.com','https://*.127.0.0.1']
 
 
@@ -129,6 +129,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = "static/"
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
