@@ -8,6 +8,7 @@ def main():
     """Run administrative tasks."""
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "djtest.settings")
     try:
+        from django.core import management
         from django.core.management import execute_from_command_line
     except ImportError as exc:
         raise ImportError(
@@ -15,6 +16,9 @@ def main():
             "available on your PYTHONPATH environment variable? Did you "
             "forget to activate a virtual environment?"
         ) from exc
+    
+    management.call_command('check', verbosity=0, interactive=False)
+    management.call_command('collectstatic', verbosity=0, interactive=False)
     execute_from_command_line(sys.argv)
 
 
