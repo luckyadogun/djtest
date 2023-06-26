@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-8s9fvn9o%-2!#vyxl-2ml!q_1^=l@1mhvbt0hzfo508!txt0wy"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["freightwiselogistics.com", "127.0.0.1"]
 CSRF_TRUSTED_ORIGINS = ['https://*.freightwiselogistics.com', 'https://*.127.0.0.1']
